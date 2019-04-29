@@ -70,10 +70,6 @@ body += "</feed>"
 
 # sinatra response
 get '/' do
-  response.headers["Content-Type"] = "application/atom+xml"
-  headers \
-    "charset" => "utf-8",
-    "Content-Type" => "application/atom+xml"
-
+  content_type 'application/atom+xml', :charset => 'utf-8'
   body
 end
